@@ -1,0 +1,140 @@
+body {
+    font-family: 'Roboto', 'Sans Serif';
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+}
+
+.clearfix:after {
+    content:" ";
+    display:table;
+    clear:both;
+}
+
+header {
+    background-color: #00B7EB;
+    padding: 10px 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+h1, h2 {
+    font-weight: 300;
+}
+
+header > h1 {
+    font-weight: 300;
+    font-size: 24px;
+    margin: 0;
+    color: #FFFFFF;
+}
+
+.word_cloud_topic {
+    margin-bottom: 10px;
+}
+
+
+
+.principal {
+    color: #0288D1;
+}
+
+.interest {
+    color: #EF6C00;
+}
+
+.detail-view-initial-state {
+
+}
+
+.detail_view_container {
+    padding: 11px 4% 10px 9%;
+    float: left;
+    width: 35%;
+}
+
+.detail_view_list {
+   font-family: 'Roboto', 'Sans Serif'; 
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
+
+.detail_view_list_header,
+.detail_view_list_sub_header {
+    font-weight: normal;
+}
+
+.detail_view_list_header{
+    color: #FF8000;
+}
+
+.detail_view_list_sub_header {
+    color: #333333;
+}
+.content {
+    padding: 20px;
+}
+
+.bar {
+    display: inline-block;
+    border: none;
+    height: 8px;
+}
+
+.cloudContainer {
+    width: 100%;
+    clear: both;
+}
+
+.word_cloud_container {
+    width: 45%;
+    float: left;
+    padding: 10px;
+}
+
+.item_container {
+    margin: 10px 4px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.cloudDetail  {
+    width: 45%;
+    float: left;
+}   
+
+
+/* util css */
+
+.size-6 {
+    font-size: 42px;
+}
+
+.size-5 {
+    font-size: 36px;
+}
+
+.size-4 {
+   font-size: 30px;
+}
+
+.size-3 {
+    font-size: 24px;
+}
+
+.size-2 {
+    font-size: 18px;
+}
+
+.size-1 {
+    font-size: 12px;
+}
+
+.red_text {
+    color: #e62739;   
+}
+
+.green_text {
+    color: #4caf50;
+}
+

@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "webpack": "webpack",
+    "start": "httpster -p 5050",
     "lint:js": "eslint app/ webpack.*.js --cache"
   },
   "repository": {
