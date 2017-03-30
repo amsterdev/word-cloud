@@ -5,7 +5,9 @@ Installation Instructions
 -------------------------
 
 npm install
+
 npm run webpack
+
 npm start 
 
 	
