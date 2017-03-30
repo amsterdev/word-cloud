@@ -1,6 +1,10 @@
 import React from 'react';
 import CloudItem from './CloudItem';
 
+/*
+* Renders details for topics on click
+*/
+
 class DetailView extends React.Component {
 	
  	constructor(props) {
@@ -13,8 +17,7 @@ class DetailView extends React.Component {
 					</h3>
 					
 					<p>(Click on a topic for more detail)</p>
-				</div>
-				
+				</div>	
 			)
     	}
   	}
@@ -26,13 +29,13 @@ class DetailView extends React.Component {
 			function detailViewSentiment () {
 				var jsxSentiment = [];
 				if (topic.sentiment.positive) {
-					jsxSentiment.push(<li className="green_text detail-view-list-item">Postive Mentions: {topic.sentiment.positive}</li>);
+					jsxSentiment.push(<li key="1" className="green_text detail-view-list-item">Postive Mentions: {topic.sentiment.positive}</li>);
 				}
 				if (topic.sentiment.neutral) {
-					jsxSentiment.push(<li className="detail-view-list-item">Neutral Mentions: {topic.sentiment.neutral}</li>);
+					jsxSentiment.push(<li key="2" className="detail-view-list-item">Neutral Mentions: {topic.sentiment.neutral}</li>);
 				}
 				if (topic.sentiment.negative) {
-					jsxSentiment.push(<li className="red_text detail-view-list-item">Negative Mentions: {topic.sentiment.negative}</li>);
+					jsxSentiment.push(<li key="3" className="red_text detail-view-list-item">Negative Mentions: {topic.sentiment.negative}</li>);
 				}
 				console.log(jsxSentiment)
 				return jsxSentiment;						

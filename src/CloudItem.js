@@ -1,6 +1,10 @@
 import React from 'react';
 import WordCloud from './WordCloud'
 
+/*
+* Renders words with related styles, handles on click action for detail view
+*/
+
 class CloudItem extends React.Component {
 
     constructor(props) {

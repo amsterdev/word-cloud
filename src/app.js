@@ -12,7 +12,7 @@ class App extends React.Component {
 
     render () {
         return (
-            <div className="cloudContainer clearfix">
+            <div className="cloud_container clearfix">
                 <Header title="Word Cloud Sample"/>
                 <WordCloud update={this.handler}/>
             </div>

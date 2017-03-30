@@ -1,3 +1,8 @@
+/*
+*  Manipulating array of topics a dizzying amount of times to set styles and sort for a plain html version
+* of something like a word cloud, attempt to use a lib for svg render was a fail. 
+*/
+
 var cloudListPrepare = function(topics) {
 
     /// sort array by volume value

@@ -1,10 +1,13 @@
 import React from 'react';
 import axios from 'axios';
 
-// import modules
 import CloudItem from './CloudItem';
 import DetailView from './DetailView';
 var cloudListPrepare = require('./cloudListPrepare');
+
+/*
+* Handle main print of wordcloud starting with fetching data and printing topics when available
+*/
 
 class WordCloud extends React.Component {
 

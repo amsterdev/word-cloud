@@ -5,19 +5,13 @@ body {
     margin: 0;
 }
 
-.clearfix:after {
-    content:" ";
-    display:table;
-    clear:both;
-}
-
 header {
     background-color: #00B7EB;
     padding: 10px 20px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
-h1, h2 {
+h1 {
     font-weight: 300;
 }
 
@@ -28,35 +22,18 @@ header > h1 {
     color: #FFFFFF;
 }
 
-.word_cloud_topic {
-    margin-bottom: 10px;
-}
-
-
-
-.principal {
-    color: #0288D1;
-}
-
-.interest {
-    color: #EF6C00;
-}
-
-.detail-view-initial-state {
-
-}
-
+/* topic detail view */
 .detail_view_container {
-    padding: 11px 4% 10px 9%;
+    padding: 11px 4% 10px 6%;
     float: left;
-    width: 35%;
+    width: 30%;
 }
 
 .detail_view_list {
-   font-family: 'Roboto', 'Sans Serif'; 
-   list-style: none;
-   margin: 0;
-   padding: 0;
+    font-family: 'Roboto', 'Sans Serif'; 
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .detail_view_list_header,
@@ -71,23 +48,16 @@ header > h1 {
 .detail_view_list_sub_header {
     color: #333333;
 }
-.content {
-    padding: 20px;
-}
+/* end topic detail view */
 
-.bar {
-    display: inline-block;
-    border: none;
-    height: 8px;
-}
-
-.cloudContainer {
+/* word cloud main */
+.cloud_container {
     width: 100%;
     clear: both;
 }
 
 .word_cloud_container {
-    width: 50%;
+    width: 55%;
     float: left;
     padding: 10px;
 }
@@ -97,15 +67,22 @@ header > h1 {
     cursor: pointer;
     display: inline-block;
     height: 30px;
+    color: #777777;
 }
 
-.cloudDetail  {
+.cloud_detail  {
     width: 35%;
     float: left;
 }   
-
+/* end word cloud main */
 
 /* util css */
+
+.clearfix:after {
+    content:" ";
+    display:table;
+    clear:both;
+}
 
 .size-1 {
     font-size: 40px;
