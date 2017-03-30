@@ -29,7 +29,7 @@ class CloudItem extends React.Component {
                 topic.classColor = "";
             }
             //var topicVolume = topic.volume;
-            topic.itemClass = topic.classColor + " " + topic.fontSizeClass;
+            topic.itemClass = topic.classColor + " " + topic.myTextSizeClass;
 	}
 
 	render (){

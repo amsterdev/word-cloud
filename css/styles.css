@@ -87,46 +87,47 @@ header > h1 {
 }
 
 .word_cloud_container {
-    width: 45%;
+    width: 50%;
     float: left;
     padding: 10px;
+
 }
 
 .item_container {
-    margin: 10px 4px;
+    margin: 8px 12px;
     cursor: pointer;
     display: inline-block;
 }
 
 .cloudDetail  {
-    width: 45%;
+    width: 35%;
     float: left;
 }   
 
 
 /* util css */
 
-.size-6 {
-    font-size: 42px;
-}
-
-.size-5 {
-    font-size: 36px;
-}
-
-.size-4 {
-   font-size: 30px;
-}
-
-.size-3 {
-    font-size: 24px;
+.size-1 {
+    font-size: 40px;
 }
 
 .size-2 {
-    font-size: 18px;
+    font-size: 34px;
 }
 
-.size-1 {
+.size-3 {
+   font-size: 28px;
+}
+
+.size-4 {
+    font-size: 22px;
+}
+
+.size-5 {
+    font-size: 16px;
+}
+
+.size-6 {
     font-size: 12px;
 }
 
