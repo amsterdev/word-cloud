@@ -37,7 +37,6 @@ class DetailView extends React.Component {
 				if (topic.sentiment.negative) {
 					jsxSentiment.push(<li key="3" className="red_text detail-view-list-item">Negative Mentions: {topic.sentiment.negative}</li>);
 				}
-				console.log(jsxSentiment)
 				return jsxSentiment;						
 			}
 
