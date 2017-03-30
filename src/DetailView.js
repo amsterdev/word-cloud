@@ -5,7 +5,6 @@ class DetailView extends React.Component {
 	
  	constructor(props) {
     	super(props);
-    	console.log(this, 'in constructor of detail view');
     	this.state = {
     		content: (
 				<div>
@@ -21,8 +20,6 @@ class DetailView extends React.Component {
   	}
 
 	render () {
-		console.log('rerender???', this);
-	  //	this.state.content = this.props.DetailView.label
 		if (this.props.detailView) {
 			var topic = this.props.detailView
 

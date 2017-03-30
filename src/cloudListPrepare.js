@@ -11,14 +11,6 @@ var cloudListPrepare = function(topics) {
     var testLength = topics.length;
     //console.log('topics length is '+ testLength) 
 
-    // style for cloud placement - randomize horizontalplacements
-    topics.map(function(item){
-        var paddingLeft = 8 + parseInt((Math.random() * 50), 10);
-        var verticalAlign = (Math.random() > .5) ? 'top' : 'bottom';
-        var styleSetting = {'marginLeft': paddingLeft + 'px', 'verticalAlign': verticalAlign };
-        item.styleSetting = styleSetting;
-    });
-
     // find max value for volume to set range 
     var maxValue = 0;
     topics.forEach(function(item){
@@ -59,7 +51,7 @@ var cloudListPrepare = function(topics) {
             out.push(topics.slice(size * n));
 
         }
-        console.log(out, 'array magic');
+       
         // setting var to keep count for setting size class var
         var j = 1
 
@@ -96,19 +88,16 @@ var cloudListPrepare = function(topics) {
 
     var arraySets = findSizeSettings(topics, 3, false);
 
-    /// set size buckets for font-size classes 
-    function findBuckets(val, maxValue, numberOfBuckets) { 
-        var numberOfBuckets = numberOfBuckets || 6;
-        var interval = maxValue/numberOfBuckets;
-        var i;
-        for (i = 1; i < (numberOfBuckets + 1); i++) {
-            if (val <= i*interval) {
-                return 'size-' + i;
-            }
-        }
-    }
+    // style for cloud placement - randomize horizontalplacements
+    topics.map(function(item){
+        var paddingLeft = 8 + parseInt((Math.random() * 50), 10);
+        var verticalAlign = (Math.random() > .5) ? 'top' : 'bottom';
+        var styleSetting = {'marginLeft': paddingLeft + 'px', 'verticalAlign': verticalAlign };
+        item.styleSetting = styleSetting;
+    });
+
     /// TEST TO CHECK ARRAY still has all items
-    //console.log('checking length at end of processing. currentlength is ',topics.length, 'compared to original value ', testLength)
+    // console.log('checking length at end of processing. currentlength is ',topics.length, 'compared to original value ', testLength)
     
     // sorting array to put largest render size in middle to create a 'somewhat' cloud-like effect
     var newArray = [];

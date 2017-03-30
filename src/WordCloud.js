@@ -1,16 +1,10 @@
-// import libs
 import React from 'react';
 import axios from 'axios';
-
-//import * as d3 from 'd3';
 
 // import modules
 import CloudItem from './CloudItem';
 import DetailView from './DetailView';
 var cloudListPrepare = require('./cloudListPrepare');
-
-
-//var cloudListPrepare = require('cloudListPrepare.js');
 
 class WordCloud extends React.Component {
 
@@ -32,15 +26,12 @@ class WordCloud extends React.Component {
     componentDidMount () {
         var path = 'data/topics.json';
         var _this = this;
-        //cloudListPrepare([2,5,5])
-        console.log(cloudListPrepare, 'now this')
+        //  fetch data when component ready
         axios
             .get(path)
             .then(function(result) {  
-            // we got it!
-            console.log('axios', result, result.data.topics);
             var topics = result.data.topics;
-
+            // preparing list for setting various styles and attrs
             var updatedTopics = cloudListPrepare(topics);
             topics = updatedTopics;
             _this.setState({
@@ -59,7 +50,7 @@ class WordCloud extends React.Component {
                     />
                 </span>)
     }
-    
+
     renderDetailView () {    
         return(
             <div className="cloudDetail">
@@ -76,13 +67,8 @@ class WordCloud extends React.Component {
 
         if (this.state && this.state.topics) {
             var topics = this.state.topics;
-//            var topicFontSizeList = bucketSize(topics);
-            //console.log(topics, typeof topics, topics instanceof Array);
-            var maxValue = 0;
 
             // find largest size of value determining font size
-        
-
             var allTopics = topics.map(function(topic, i) {      
                 //var sizeStyleClass = findBuckets(topic.volume, maxValue);
                 // topic.fontSizeClass = sizeStyleClass;
@@ -104,7 +90,7 @@ class WordCloud extends React.Component {
 
         return (
             <div className="content">
-                nothing here
+                nothing here (something has gone wrong!)
             </div>
         );
     }
