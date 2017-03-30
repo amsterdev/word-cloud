@@ -12,10 +12,9 @@ var cloudListPrepare = function(topics) {
 
     topics.sort(sortNumber);
 
-    ///test length
-    var testLength = topics.length;
-    //console.log('topics length is '+ testLength) 
-
+    ///test length -- check to see that length of array of output matches array length at input
+    // var testLength = topics.length;
+   
     // find max value for volume to set range 
     var maxValue = 0;
     topics.forEach(function(item){
@@ -29,7 +28,6 @@ var cloudListPrepare = function(topics) {
     function findSizeSettings (topics, num) {
         var numberOfBuckets = num || 6;
         var chunks = topics.length / (numberOfBuckets/2);
-        // console.log('chunks', chunks);
         topics.split;
     
         if (num < 2)
@@ -50,10 +48,10 @@ var cloudListPrepare = function(topics) {
             size = Math.floor(len / num);
             if (len % size === 0)
                 size--;
-            while (i < size * n) {
+            while (i < size * num) {
                 out.push(topics.slice(i, i += size));
             }
-            out.push(topics.slice(size * n));
+            out.push(topics.slice(size * num));
 
         }
        
@@ -93,7 +91,7 @@ var cloudListPrepare = function(topics) {
 
     var arraySets = findSizeSettings(topics, 3, false);
 
-    // style for cloud placement - randomize horizontalplacements
+    // style for cloud placement - randomize horizontal and vertical placements a bit
     topics.map(function(item){
         var paddingLeft = 8 + parseInt((Math.random() * 50), 10);
         var verticalAlign = (Math.random() > .5) ? 'top' : 'bottom';

@@ -56,7 +56,7 @@ class WordCloud extends React.Component {
 
     renderDetailView () {    
         return(
-            <div className="cloudDetail">
+            <div className="cloud_detail">
                 <DetailView />
             </div>   
         )
