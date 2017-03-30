@@ -24,7 +24,7 @@ header > h1 {
 
 /* topic detail view */
 .detail_view_container {
-    padding: 11px 4% 10px 6%;
+    padding: 11px 1% 10px 6%;
     float: left;
     width: 30%;
 }
@@ -59,7 +59,7 @@ header > h1 {
 .word_cloud_container {
     width: 55%;
     float: left;
-    padding: 10px;
+    padding: 10px 0 10px 30px;
 }
 
 .item_container {
@@ -89,7 +89,7 @@ header > h1 {
 }
 
 .size-2 {
-    font-size: 30px;
+    font-size: 27px;
 }
 
 .size-3 {
