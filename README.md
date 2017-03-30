@@ -1,13 +1,11 @@
 # word-cloud
-this is for demonstration purposes
+this is for demonstration purposes.
 
-Installation Instructions
--------------------------
+Installation
+------------
 
 npm install
 
 npm run webpack
 
 npm start 
-
-	
