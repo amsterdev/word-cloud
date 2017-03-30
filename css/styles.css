@@ -90,13 +90,13 @@ header > h1 {
     width: 50%;
     float: left;
     padding: 10px;
-
 }
 
 .item_container {
     margin: 8px 12px;
     cursor: pointer;
     display: inline-block;
+    height: 28px;
 }
 
 .cloudDetail  {
@@ -112,22 +112,22 @@ header > h1 {
 }
 
 .size-2 {
-    font-size: 34px;
+    font-size: 30px;
 }
 
 .size-3 {
-   font-size: 28px;
+   font-size: 22px;
 }
 
 .size-4 {
-    font-size: 22px;
+    font-size: 18px;
 }
 
 .size-5 {
-    font-size: 16px;
+    font-size: 14px;
 }
 
-.size-6 {
+.size-6  {
     font-size: 12px;
 }
 

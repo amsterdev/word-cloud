@@ -1,30 +1,40 @@
+var cloudListPrepare = function(topics) {
 
-function cloudListPrepare (topics) {
+    /// sort array by volume value
+    function sortNumber(a,b) {
+        return b.volume - a.volume;
+    }
 
+    topics.sort(sortNumber);
+
+    ///test length
+    var testLength = topics.length;
+    //console.log('topics length is '+ testLength) 
+
+    // style for cloud placement - randomize horizontalplacements
     topics.map(function(item){
-        var paddingLeft = parseInt((Math.random() * 40), 10);
-        var styleSetting = {'marginLeft': paddingLeft + 'px'};
-
+        var paddingLeft = 8 + parseInt((Math.random() * 50), 10);
+        var verticalAlign = (Math.random() > .5) ? 'top' : 'bottom';
+        var styleSetting = {'marginLeft': paddingLeft + 'px', 'verticalAlign': verticalAlign };
         item.styleSetting = styleSetting;
-    })
+    });
 
-
+    // find max value for volume to set range 
+    var maxValue = 0;
     topics.forEach(function(item){
       if(item.volume > maxValue) {
             maxValue = item.volume;
         }
     })
 
-    console.log(maxValue);
-    
-
-    function findSizeSettings (topics, num, balanced) {
-
-        /// help from http://stackoverflow.com/questions/8188548/splitting-a-js-array-into-n-arrays
-        var numberOfBuckets = numberOfBuckets || 6;
+    /// splits array into three chunks   
+    /// help from http://stackoverflow.com/questions/8188548/splitting-a-js-array-into-n-arrays
+    function findSizeSettings (topics, num) {
+        var numberOfBuckets = num || 6;
         var chunks = topics.length / (numberOfBuckets/2);
-        console.log('chunks', chunks);
-        topics.split
+        // console.log('chunks', chunks);
+        topics.split;
+    
         if (num < 2)
             return [topics];
 
@@ -38,16 +48,7 @@ function cloudListPrepare (topics) {
             while (i < len) {
                 out.push(topics.slice(i, i += size));
             }
-        }
-
-        else if (balanced) {
-            while (i < len) {
-                size = Math.ceil((len - i) / num--);
-                out.push(topics.slice(i, i += size));
-            }
-        }
-
-        else {
+        } else {
             num--;
             size = Math.floor(len / num);
             if (len % size === 0)
@@ -59,73 +60,67 @@ function cloudListPrepare (topics) {
 
         }
         console.log(out, 'array magic');
+        // setting var to keep count for setting size class var
+        var j = 1
+
         out.forEach(function(arr, i){
-            
-            console.log(arr, 'arr');
             var interval = arr.length / 2;
             var maxValue = 0;
-            var minValue = 1000;
-                arr.forEach(function(item) {
+            var minValue = 100000;
+            
+            arr.forEach(function(item) {
+                if(item.volume > maxValue) {
+                    maxValue = item.volume;
+                }
+                if (item.volume < minValue) {
+                    minValue = item.volume;
+                }
+            })
 
-                    if(item.volume > maxValue) {
-                        maxValue = item.volume;
-                    }
-                    if (item.volume < minValue) {
-                        minValue = item.volume;
-                    } 
-
-                })
-        console.log(minValue, maxValue, 'ranges');
-        var midPoint =  minValue +  parseInt( ((maxValue - minValue)/2), 10) ;
-        console.log(midPoint, 'midPoint')
-
-                arr.forEach(function(item, j) {
-                    if (item.volume > midPoint) {
-                        item.myTextSizeClass = 'size-' + (1 + j + i);
-                    } else {
-                        item.myTextSizeClass = 'size-' + (1 + j + i);
-                    }
-                    console.log('size here?', item)
-
-                })
-
-            /*
-            for (i = 1; i < 2; i++) {
-            if (val <= i*interval) {
-                tpp
-                return 'size-' + i;
-            }
-            */
-        });
-
-
-    
-        
-
+            //  console.log(minValue, maxValue, 'ranges');
+            var midPoint =  minValue +  parseInt( ((maxValue - minValue)/2), 10) ;
+  
+            arr.forEach(function(item) {    
+                if (item.volume > midPoint) {
+                    item.myTextSizeClass = 'size-' + (j + i);
+                } else {
+                    item.myTextSizeClass = 'size-' + ((j) + (i + 1));
+                }
+                // console.log('checking i here', i, 'checking j here', j, 'item vol is ', item.volume, item.myTextSizeClass)
+            })
+            j++;
+        });  
+        //// finish test
         return out;
     }
+
     var arraySets = findSizeSettings(topics, 3, false);
 
-
     /// set size buckets for font-size classes 
-    function findBuckets(val, maxValue, numberOfBuckets) {
-        
+    function findBuckets(val, maxValue, numberOfBuckets) { 
         var numberOfBuckets = numberOfBuckets || 6;
         var interval = maxValue/numberOfBuckets;
         var i;
         for (i = 1; i < (numberOfBuckets + 1); i++) {
-          //  console.log(i*interval)
             if (val <= i*interval) {
-          //     console.log(val, 'whater', 'size-' + i);
                 return 'size-' + i;
             }
         }
     }
+    /// TEST TO CHECK ARRAY still has all items
+    //console.log('checking length at end of processing. currentlength is ',topics.length, 'compared to original value ', testLength)
+    
+    // sorting array to put largest render size in middle to create a 'somewhat' cloud-like effect
+    var newArray = [];
+    topics.forEach(function(item, i) {
+        if ((i % 2) === 0) {
+            newArray.push(item)
+        } else {
+            newArray.unshift(item)
+        }
+    })
 
-
-
-
-
-
+    return newArray
 } 
    
+module.exports = cloudListPrepare;
